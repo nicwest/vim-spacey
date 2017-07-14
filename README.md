@@ -25,6 +25,7 @@ imap <C-_> <Plug>spacey-underscore
 imap <C--> <Plug>spacey-hyphen<CR>
 imap <C-space> <Plug>spacey-clear<CR>
 ```
+__Doesn't work :(__
 
 Tests
 -----
