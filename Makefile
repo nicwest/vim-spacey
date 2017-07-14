@@ -1,0 +1,17 @@
+.PHONY: init test clean lint
+
+MACRO_STORAGE_FILE=$(HOME)/.vim/macrostore
+
+init:
+	git clone https://github.com/thinca/vim-themis
+	git clone https://github.com/syngan/vim-vimlint
+	git clone https://github.com/ynkdir/vim-vimlparser
+
+lint:
+	./vim-vimlint/bin/vimlint.sh -l ./vim-vimlint -p ./vim-vimlparser -e EVL102.l:_=1 -c func_abort=1 autoload plugin
+
+test:
+	./vim-themis/bin/themis --reporter dot -r tests
+
+clean:
+	rm -rf vim-themis vim-vimlint vim-vimlparser
